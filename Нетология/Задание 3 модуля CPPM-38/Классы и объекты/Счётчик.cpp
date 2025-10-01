@@ -22,16 +22,16 @@ void printResultcounter()
 	Counter count{};
 	std::string x{};
 
-	std::cout << "¬˚ ıÓÚËÚÂ ÛÍ‡Á‡Ú¸ Ì‡˜‡Î¸ÌÓÂ ÁÌ‡˜ÂÌËÂ Ò˜∏Ú˜ËÍ‡? ¬‚Â‰ËÚÂ ‰‡ ËÎË ÌÂÚ: ";
+	std::cout << "–í—ã —Ö–æ—Ç–∏—Ç–µ —É–∫–∞–∑–∞—Ç—å –Ω–∞—á–∞–ª—å–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Å—á—ë—Ç—á–∏–∫–∞? –í–≤–µ–¥–∏—Ç–µ –¥–∞ –∏–ª–∏ –Ω–µ—Ç: ";
 	std::getline(std::cin >> std::ws, x);
-	if ( x == "‰‡" )
+	if ( x == "–¥–∞" )
 	{
-		std::cout << "¬‚Â‰ËÚÂ Ì‡˜‡Î¸ÌÓÂ ÁÌ‡˜ÂÌËÂ Ò˜∏Ú˜ËÍ‡: ";
+		std::cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞—á–∞–ª—å–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Å—á—ë—Ç—á–∏–∫–∞: ";
 		count = { userInputInt() };
 	}
 	while (true)
 	{
-		std::cout << "¬‚Â‰ËÚÂ ÍÓÏ‡Ì‰Û ('+', '-', '=' ËÎË 'x'): ";
+		std::cout << "–í–≤–µ–¥–∏—Ç–µ –∫–æ–º–∞–Ω–¥—É ('+', '-', '=' –∏–ª–∏ 'x'): ";
 		x = userInputString();
 		if (x == "+")
 			count.increase();
@@ -39,9 +39,9 @@ void printResultcounter()
 			count.decrease();
 		else if (x == "=")
 			std::cout << count.get_counter() << std::endl;
-		else if (x == "’" || "ı")
+		else if (x == "–•" || "—Ö")
 		{
-			std::cout << "ƒÓ Ò‚Ë‰‡ÌËˇ!" << std::endl;
+			std::cout << "–î–æ —Å–≤–∏–¥–∞–Ω–∏—è!" << std::endl;
 			break;
 		}
 	}

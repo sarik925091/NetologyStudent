@@ -81,11 +81,11 @@ double userInputnum1()
 	double x{};
 	while (true)
 	{
-		std::cout << "Ââåäèòå num1: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num1: ";
 		std::cin >> x;
 		if (x == 0)
 		{
-			std::cout << "Íåâåðíûé ââîä!" << std::endl;
+			std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
 			continue;
 		}
 		else
@@ -99,11 +99,11 @@ double userInputnum2()
 	double x{};
 	while (true)
 	{
-		std::cout << "Ââåäèòå num2: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num2: ";
 		std::cin >> x;
 		if (x == 0)
 		{
-			std::cout << "Íåâåðíûé ââîä!" << std::endl;
+			std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
 			continue;
 		}
 		else

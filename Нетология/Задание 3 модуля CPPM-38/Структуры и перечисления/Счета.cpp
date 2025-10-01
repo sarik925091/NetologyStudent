@@ -21,19 +21,19 @@ int main()
 
 	BankAccount userAccount;
 
-	std::cout << "Ââåäèòå íîìåð ñ÷¸òà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‡Ñ‘Ñ‚Ð°: ";
 	userAccount.ID = userInputInt();
 
-	std::cout << "Ââåäèòå èìÿ âëàäåëüöà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ð»Ð°Ð´ÐµÐ»ÑŒÑ†Ð°: ";
 	userAccount.name = userInputString();
 
-	std::cout << "Ââåäèòå áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	userAccount.amount = userInputDouble();
 
-	std::cout << "Ââåäèòå íîâûé áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	newBalance(userAccount);
 
-	std::cout << "Âàø ñ÷¸ò: " << userAccount.ID << ", " << userAccount.name << ", " << userAccount.amount << std::endl;
+	std::cout << "Ð’Ð°Ñˆ ÑÑ‡Ñ‘Ñ‚: " << userAccount.ID << ", " << userAccount.name << ", " << userAccount.amount << std::endl;
 
 	return 0;
 }

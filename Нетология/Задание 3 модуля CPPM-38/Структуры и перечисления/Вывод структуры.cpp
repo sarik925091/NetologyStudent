@@ -17,11 +17,11 @@ struct Adress
 void printStruct(Adress& a)
 {
 	std::cout << "\n\n" << std::endl;
-	std::cout << "Ãîðîä: " << a.cityName << std::endl;
-	std::cout << "Óëèöà: " << a.streetName << std::endl;
-	std::cout << "Íîìåð äîìà: " << a.houseNumber << std::endl;
-	std::cout << "Íîìåð êâàðòèðû: " << a.apartmentNumber << std::endl;
-	std::cout << "Èíäåêñ: " << a.index << std::endl;
+	std::cout << "Ð“Ð¾Ñ€Ð¾Ð´: " << a.cityName << std::endl;
+	std::cout << "Ð£Ð»Ð¸Ñ†Ð°: " << a.streetName << std::endl;
+	std::cout << "ÐÐ¾Ð¼ÐµÑ€ Ð´Ð¾Ð¼Ð°: " << a.houseNumber << std::endl;
+	std::cout << "ÐÐ¾Ð¼ÐµÑ€ ÐºÐ²Ð°Ñ€Ñ‚Ð¸Ñ€Ñ‹: " << a.apartmentNumber << std::endl;
+	std::cout << "Ð˜Ð½Ð´ÐµÐºÑ: " << a.index << std::endl;
 }
 
 int main()
@@ -30,19 +30,19 @@ int main()
 	SetConsoleOutputCP(1251);
 	
 	Adress a;
-	std::cout << "Ãîðîä: ";
+	std::cout << "Ð“Ð¾Ñ€Ð¾Ð´: ";
 	a.cityName = userInputString();
 	
-	std::cout << "Óëèöà: ";
+	std::cout << "Ð£Ð»Ð¸Ñ†Ð°: ";
 	a.streetName = userInputString();
 
-	std::cout << "Íîìåð äîìà: ";
+	std::cout << "ÐÐ¾Ð¼ÐµÑ€ Ð´Ð¾Ð¼Ð°: ";
 	a.houseNumber = userInputInt();
 
-	std::cout << "Íîìåð êâàðòèðû: ";
+	std::cout << "ÐÐ¾Ð¼ÐµÑ€ ÐºÐ²Ð°Ñ€Ñ‚Ð¸Ñ€Ñ‹: ";
 	a.apartmentNumber = userInputInt();
 
-	std::cout << "Èíäåêñ: ";
+	std::cout << "Ð˜Ð½Ð´ÐµÐºÑ: ";
 	a.index = userInputInt();
 
 	printStruct(a);
