@@ -2,3 +2,6 @@ x64/
 zaverwennie zadanie!/
 Header.h
 .vs/
+*.filters
+*.user
+*.aps

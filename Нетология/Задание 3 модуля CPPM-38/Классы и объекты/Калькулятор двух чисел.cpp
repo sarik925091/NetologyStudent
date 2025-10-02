@@ -16,7 +16,7 @@ public:
 		__num1 = num1;
 		__num2 = num2;
 	}
-	~Calculator() {}
+	//~Calculator() {}
 
 	double add() { return __num1 + __num2; }
 	double multiply() { return __num1 * __num2;  }
@@ -28,7 +28,7 @@ public:
 	{
 		if (num1 != 0)
 		{
-			__num1 == num1;
+			__num1 = num1;
 			return true;
 		}
 		else
@@ -40,7 +40,7 @@ public:
 	{
 		if (num2 != 0)
 		{
-			__num2 == num2;
+			__num2 = num2;
 			return true;
 		}
 		else

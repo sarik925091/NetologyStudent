@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+
 int userInputInt();
 std::string userInputString();
 
@@ -10,7 +11,7 @@ class Counter
 public:
 	Counter() {}
 	Counter(int count) { __count = count; }
-	~Counter() {}
+	//~Counter() {}
 	int increase() { return ++__count; }
 	int decrease() { return --__count; }
 	int get_counter() { return __count; }
@@ -39,7 +40,7 @@ void printResultcounter()
 			count.decrease();
 		else if (x == "=")
 			std::cout << count.get_counter() << std::endl;
-		else if (x == "Х" || "х")
+		else if (x == "Х" || x == "х")
 		{
 			std::cout << "До свидания!" << std::endl;
 			break;
