@@ -18,6 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in1.txt" />
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out1.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
