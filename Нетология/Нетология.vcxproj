@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in1.txt" />
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out1.txt" />
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in3.txt" />
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in2.txt" />
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out3.txt" />
+    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out2.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

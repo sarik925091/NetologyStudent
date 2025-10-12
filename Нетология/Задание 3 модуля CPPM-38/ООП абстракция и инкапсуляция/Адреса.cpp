@@ -6,75 +6,79 @@
 class Address
 {
 private:
-	std::string __cityName{};
-	std::string __streetName{};
-	int __houseNumber{};
-	int __apartmentNumber{};
-public:
-	Address() {}
-	Address(std::string cityName, std::string streetName, int houseNumber, int apartmentNumber)
-	{
-		__cityName = cityName;
-		__streetName = streetName;
-		__houseNumber = houseNumber;
-		__apartmentNumber = apartmentNumber;
-	}
-	
-	void set_cityName(std::string cityName) { __cityName = cityName; }
-	void set_streetName(std::string streetName) { __streetName = streetName; }
-	void set_houseNumber(int houseNumber) { __houseNumber = houseNumber; }
-	void set_apartmentNumber(int apartmentNumber) { __apartmentNumber = apartmentNumber; }
+	std::string city;
+	std::string street;
+	int house;
+	int apartment;
 
-	std::string get_cityName() const { return __cityName; }
-	std::string get_streetName() const { return __streetName; }
-	int get_houseNumber() const { return __houseNumber; }
-	int get_apartmentNumber() const { return __apartmentNumber; }
+public:
+	Address() {};
+	Address(std::string city, std::string street, int house, int apartment)
+		: city(city), street(street), house(house), apartment(apartment)
+	{
+	}
+
+	std::string toString() const
+	{
+		return city + ", " + street + "," +
+			std::to_string(house) + ", " +
+			std::to_string(apartment);
+	}
 };
 
+void set_addresses(std::string* city, std::string* street, int* house, int* apartment, int row);
 void writeFile(Address* arrayAdress, int row);
 
 void readFile()
 {
-	std::ifstream file("in.txt");
+	std::ifstream file("in3.txt");
 	if (!(file.is_open())) 
 	{
-		std::cerr << "Failed to open file" << std::endl;
+		//std::cerr << "Error: " << strerror(errno);
+		std::cerr << "Failed to open file IN" << std::endl;
 		return;
 	}
 
 	int row{};
 	file >> row;
-	Address* arrayAdress(new Address[row]);
-	std::string city, street;
-	int house, apartment;
+	std::string* city{ new std::string[row] };
+	std::string* street{ new std::string[row] };
+	int* house{ new int[row] };
+	int* apartment{ new int[row] };
+
 	for (size_t i = 0; i < row; ++i)
 	{
-		file >> city >> street >> house >> apartment;
-		arrayAdress[i].set_cityName(city);
-		arrayAdress[i].set_streetName(street);
-		arrayAdress[i].set_houseNumber(house);
-		arrayAdress[i].set_apartmentNumber(apartment);
+		file >> city[i] >> street[i] >> house[i] >> apartment[i];
 	}
 	file.close();
-	writeFile(arrayAdress, row);
-	delete[] arrayAdress;
+	set_addresses(city, street, house, apartment, row);
+	delete[] city;
+	delete[] street;
+	delete[] house;
+	delete[] apartment;
 }
-void writeFile(Address* arrayAdress, int row)
+void set_addresses(std::string* city, std::string* street, int* house, int* apartment, int row)
 {
-	std::ofstream file("out.txt");
+	Address* addresses{ new Address[row] };
+	for (size_t i = 0; i < row; ++i)
+	{
+		addresses[i] = Address(city[i], street[i], house[i], apartment[i]);
+	}
+	writeFile(addresses, row);
+}
+void writeFile(Address* addresses,int row)
+{
+	std::ofstream file("out3.txt");
 	if (!(file.is_open()))
 	{
-		std::cerr << "Failed to open file" << std::endl;
+		std::cerr << "Failed to open file OUT" << std::endl;
 		return;
 	}
 
 	file << row << std::endl;
 	for (int i(row - 1); i >= 0; --i)
 	{
-		file << arrayAdress[i].get_cityName() << ",";
-		file << arrayAdress[i].get_streetName() << ",";
-		file << arrayAdress[i].get_houseNumber() << ",";
-		file << arrayAdress[i].get_apartmentNumber() << std::endl;
+		file << addresses[i].toString() << std::endl;
 	}
 	file.close();
 }
