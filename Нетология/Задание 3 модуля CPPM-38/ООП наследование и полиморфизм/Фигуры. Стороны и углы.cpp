@@ -4,7 +4,7 @@
 
 class Figure
 {
-private:
+protected:
 	int a, b, c, d;
 	int A, B, C, D;
 public:
@@ -23,13 +23,9 @@ public:
 
 class Triangle : public Figure                   //Треугольник
 {
-	int a, b, c;
-	int A, B, C;
+	
 public:
-	Triangle(int a, int b, int c, int A, int B, int C) : Figure(a, b, c, A, B, C), 
-		a(a), b(b), c(c), A(A), B(B), C(C)
-	{
-	}
+	Triangle(int a, int b, int c, int A, int B, int C) : Figure(a, b, c, A, B, C) {}
 	virtual void print_info() override
 	{
 		std::cout << "Треугольник:" << std::endl;
@@ -41,12 +37,9 @@ public:
 
 class RightTriangle : public Triangle                  //Прямоугольный треугольник: (угол C всегда равен 90);
 {
-	int a, b, c;
-	int A, B, C = 90;
+	
 public:
-	RightTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b, c, A, B, this->C), 
-		a(a), b(b), c(c), A(A), B(B)
-	{}
+	RightTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b, c, A, B, 90) {}
 
 	void print_info() override
 	{
@@ -59,12 +52,8 @@ public:
 
 class IsoscelesTriangle : public Triangle                   //Равнобедренный треугольник: (стороны a и c равны, углы A и C равны);
 {
-	int a, b, c = a;
-	int A, B, C = A;
 public:
-	IsoscelesTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b, c = a, A, B, C = A),
-		a(a), b(b),  A(A), B(B)
-	{}
+	IsoscelesTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b, c = a, A, B, C = A) {}
 	void print_info() override
 	{
 		std::cout << "Равнобедренный треугольник:" << std::endl;
@@ -76,12 +65,8 @@ public:
 
 class EquilateralTriangle : public Triangle                 //Равносторонний треугольник: (все стороны равны, все углы равны 60);
 {
-	int a, b = a, c = b;
-	int A = 60, B = A, C = B;   
 public:
-	EquilateralTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b = a, c = b, this->A, this->B, this->C),
-		a(a)
-	{}
+	EquilateralTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b = a, c = b, A = 60, B = A, C = B) {}
 	void print_info() override
 	{
 		std::cout << "Равносторонний треугольник:" << std::endl;
@@ -93,13 +78,8 @@ public:
 
 class Quadrangle : public Figure                //Четырёхугольник
 {
-	int a, b, c, d;
-	int A, B, C, D;
 public:
-	Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D) : Figure(a, b, c, d, A, B, C, D),
-		a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D)
-	{
-	}
+	Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D) : Figure(a, b, c, d, A, B, C, D) {}
 	void print_info() override
 	{
 		std::cout << "Четырёхугольник:" << std::endl;
@@ -111,13 +91,8 @@ public:
 
 class Rectangle1 : public Quadrangle                         //Прямоугольник (стороны a,c и b,d попарно равны, все углы равны 90);
 {
-	int a, b, c = a, d = b;
-	int A = 90, B = A, C = B, D = C;
 public:
-	Rectangle1(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c=a, d=b, this->A, this->B, this->C, this->D),
-		a(a), b(b)
-	{
-	}
+	Rectangle1(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c = a, d = b, A = 90, B = A, C = B, D = C) {}
 	void print_info() override
 	{
 		std::cout << "Прямоугольник:" << std::endl;
@@ -129,13 +104,8 @@ public:
 
 class Square : public Quadrangle                            //Квадрат (угол C всегда равен 90);
 {
-	int a, b, c, d;
-	int A, B, D, C = 90;
 public:
-	Square(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c, d, A, B, this->C, D),
-		a(a), b(b), c(c), d(d), A(A), B(B), D(D)
-	{
-	}
+	Square(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c, d, A, B, C = 90, D) {}
 	void print_info() override
 	{
 		std::cout << "Квадрат:" << std::endl;
@@ -148,13 +118,8 @@ public:
 
 class Parallelogram : public Quadrangle                  //Параллелограмм (стороны a,c и b,d попарно равны, углы A,C и B,D попарно равны);
 {
-	int a, b, c = a, d = b;
-	int A, B, C = A, D = B;
 public:
-	Parallelogram(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c=a, d=b, A, B, C=A, D=B),
-		a(a), b(b), A(A), B(B)
-	{
-	}
+	Parallelogram(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c = a, d = b, A, B, C = A, D = B) {}
 	void print_info() override
 	{
 		std::cout << "Параллелограмм:" << std::endl;
@@ -166,13 +131,8 @@ public:
 
 class Rhombus : public Quadrangle                        //Ромб (все стороны равны, углы A,C и B,D попарно равны).
 {
-	int a, b = a, c = b, d = c;
-	int A, B, C = A, D = B;
 public:
-	Rhombus(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c, d, A, B, C = A, D = B),
-		a(a), A(A), B(B)
-	{
-	}
+	Rhombus(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b = a, c = b, d = c, A, B, C = A, D = B) {}
 	void print_info() override
 	{
 		std::cout << "Ромб:" << std::endl;
@@ -183,46 +143,43 @@ public:
 
 };
 
+void print_info(Figure* figure)
+{
+	figure->print_info();  
+}
+
+
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
 	Triangle triangle{ 10,20,30,50,60,70 };
-	Figure* f_triangle{ &triangle };
-	f_triangle->print_info();
+	print_info(&triangle);
 
 	RightTriangle rightTriangle{ 10,20,30,50,60,90 };
-	Figure* f_rightTriangle{ &rightTriangle };
-	f_rightTriangle->print_info();
+	print_info(&rightTriangle);
 
 	IsoscelesTriangle isoscelesTriangle{ 10,20,30,50,60,50 };
-	Figure* f_isoscelesTriangle{ &isoscelesTriangle };
-	f_isoscelesTriangle->print_info();
+	print_info(&isoscelesTriangle);
 
 	EquilateralTriangle equilateralTriangle{ 30,30,30,60,60,60 };
-	Figure* f_equilateralTriangle{ &equilateralTriangle };
-	f_equilateralTriangle->print_info();
+	print_info(&equilateralTriangle);
 
 	Quadrangle quadrangle{ 10,20,30,40,50,60,70,80, };
-	Figure* f_quadrangle{ &quadrangle };
-	f_quadrangle->print_info();
+	print_info(&quadrangle);
 
 	Rectangle1 rectangle1{ 10,20,10,20,90,90,90,90 };
-	Figure* f_rectangle1{ &rectangle1 };
-	f_rectangle1->print_info();
+	print_info(&rectangle1);
 
 	Square square{ 20,20,20,20,90,90,90,90 };
-	Figure* f_square{ &square };
-	f_square->print_info();
+	print_info(&square);
 
 	Parallelogram parallelogram{ 20,30,20,30,30,40,30,40 };
-	Figure* f_parallelogram{ &parallelogram };
-	f_parallelogram->print_info();
+	print_info(&parallelogram);
 
 	Rhombus rhombus{ 30,30,30,30,30,40,30,40 };
-	Figure* f_rhombus{ &rhombus };
-	f_rhombus->print_info();
+	print_info(&rhombus);
 
 	return 0;
 }
