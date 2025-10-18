@@ -1,7 +1,7 @@
 #include "RightTriangle.h"
 #include <iostream>
 
-RightTriangle::RightTriangle(int a, int b, int A, int B) : Triangle(a, b, a, A, B, A) 
+RightTriangle::RightTriangle(int a, int b, int c,int A, int B) : Triangle(a, b, c, A, B, 90) 
 {
 }
 
