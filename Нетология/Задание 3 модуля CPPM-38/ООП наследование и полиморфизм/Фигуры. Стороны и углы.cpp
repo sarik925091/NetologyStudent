@@ -69,7 +69,7 @@ public:
 	EquilateralTriangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b = a, c = b, A = 60, B = A, C = B) {}
 	void print_info() override
 	{
-		std::cout << "Равносторонний треугольник:" << std::endl;
+		std::cout << "Равносторонний треугольник: " << std::endl;
 		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << std::endl;
 		std::cout << "Углы: a=" << A << " b=" << B << " c=" << C << std::endl;
 		std::cout << std::endl;
@@ -140,14 +140,13 @@ public:
 		std::cout << "Углы: a=" << A << " b=" << B << " c=" << C << " D=" << D << std::endl;
 		std::cout << std::endl;
 	}
-
 };
 
 void print_info(Figure* figure)
 {
 	figure->print_info();  
 }
-
+ 
 
 int main()
 {
