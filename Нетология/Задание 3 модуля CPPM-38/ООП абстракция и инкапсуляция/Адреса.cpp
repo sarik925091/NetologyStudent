@@ -26,7 +26,6 @@ public:
 	}
 };
 
-void set_addresses(std::string* city, std::string* street, int* house, int* apartment, int row);
 void writeFile(Address* arrayAdress, int row);
 
 void readFile()
@@ -40,32 +39,18 @@ void readFile()
 	}
 
 	int row{};
-	file >> row;
-	std::string* city{ new std::string[row] };
-	std::string* street{ new std::string[row] };
-	int* house{ new int[row] };
-	int* apartment{ new int[row] };
-
-	for (size_t i = 0; i < row; ++i)
-	{
-		file >> city[i] >> street[i] >> house[i] >> apartment[i];
+	Address* addresses = new Address[row];
+	for (int i = 0; i < row; ++i) {
+		std::string city, street;
+		int house, apartment;
+		file >> city >> street >> house >> apartment;
+		addresses[i] = Address(city, street, house, apartment);
 	}
 	file.close();
-	set_addresses(city, street, house, apartment, row);
-	delete[] city;
-	delete[] street;
-	delete[] house;
-	delete[] apartment;
-}
-void set_addresses(std::string* city, std::string* street, int* house, int* apartment, int row)
-{
-	Address* addresses{ new Address[row] };
-	for (size_t i = 0; i < row; ++i)
-	{
-		addresses[i] = Address(city[i], street[i], house[i], apartment[i]);
-	}
 	writeFile(addresses, row);
+	delete[] addresses;
 }
+
 void writeFile(Address* addresses,int row)
 {
 	std::ofstream file("out3.txt");

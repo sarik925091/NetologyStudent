@@ -25,30 +25,10 @@
     <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out2.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\EquilateralTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Figure.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\IsoscelesTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Parallelogram.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Quadrangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Rectangle1.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Rhombus.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\RightTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Square.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Triangle.h" />
     <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Математические функции\Header.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\EquilateralTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Figure.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\IsoscelesTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Parallelogram.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Quadrangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Rectangle1.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Rhombus.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\RightTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Square.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Triangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\class hierarchy.cpp" />
+    <ClCompile Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\Сортируем адреса.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
