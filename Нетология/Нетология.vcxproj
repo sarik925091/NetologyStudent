@@ -48,7 +48,7 @@
     <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\RightTriangle.cpp" />
     <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Square.cpp" />
     <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Triangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\Иерархия классов.cpp" />
+    <ClCompile Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Иерархия классов\class hierarchy.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
