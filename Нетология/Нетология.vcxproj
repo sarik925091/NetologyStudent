@@ -27,9 +27,6 @@
   <ItemGroup>
     <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Математические функции\Header.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\Сортируем адреса.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
