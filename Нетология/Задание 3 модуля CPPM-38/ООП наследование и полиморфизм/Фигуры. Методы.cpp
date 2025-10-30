@@ -107,7 +107,7 @@ public:
 	}
 };
 
-class Rectangle1 : public Quadrangle                         //Прямоугольник (стороны a,c и b,d попарно равны, все углы равны 90);
+class Rectangle1 : public Quadrangle                         
 {
 public:
 	Rectangle1(int a, int b, int c, int d, int A, int B, int C, int D) : Quadrangle(a, b, c, d, A, B, C, D) {}

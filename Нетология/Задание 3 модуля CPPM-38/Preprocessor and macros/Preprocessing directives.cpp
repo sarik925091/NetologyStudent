@@ -1,7 +1,7 @@
 #include<iostream>
 
 
-#define MODE 0
+#define MODE 1
 
 #ifndef MODE
 
@@ -9,7 +9,7 @@
 
 #endif // !MODE
 
-#ifdef MODE
+#if MODE == 1
 
 int add(int a, int b) 
 {
