@@ -25,32 +25,10 @@
     <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out2.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\2.myClass for exception.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\EquilateralTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Figure.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\IsoscelesTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Parallelogram.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Quadrangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Rectangle1.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Rhombus.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\RightTriangle.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Square.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Triangle.h" />
     <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Математические функции\Header.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\1.myClass for exception.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\3.Exceptions in constructors_main.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\EquilateralTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Figure.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\IsoscelesTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Parallelogram.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Quadrangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Rectangle1.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Rhombus.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\RightTriangle.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Square.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\Exceptions and error handling 1\Triangle.cpp" />
+    <ClCompile Include="Задание 3 модуля CPPM-38\Exceptions and error handling\A simple exception.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

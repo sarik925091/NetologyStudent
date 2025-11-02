@@ -3,6 +3,17 @@
 #include <string>
 #include <exception>
 
+class Myexcept : public std::exception
+{
+	std::string e;
+public:
+	Myexcept(std::string exc): e(exc) {}
+	virtual const char* what() const
+	{
+		return e.c_str();
+	}
+};
+
 int function(std::string str, int forbidden_length)
 {
 	if (str.length() == forbidden_length)
@@ -11,7 +22,7 @@ int function(std::string str, int forbidden_length)
 	}
 	else
 	{
-		throw "bad_length";
+		throw Myexcept("bad_length");
 	}
 }
 
@@ -37,7 +48,7 @@ int main()
 				break;
 			}
 		}
-		catch (...)
+		catch (const Myexcept& e)
 		{
 			std::cout << "The length of the word " << src << " is " << src.length() << std::endl;
 			src = userInPutString();
