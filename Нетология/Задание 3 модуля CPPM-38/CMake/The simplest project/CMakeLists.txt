@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 4.0)
+project(my_first_cmake_project VERSION 1.0 DESCRIPTION "First project" LANGUAGES CXX)
+message (STATUS "PROJECT NAME: " ${PROJECT_NAME})
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+add_executable(${PROJECT_NAME} src/my_first_cmake_program.cpp)

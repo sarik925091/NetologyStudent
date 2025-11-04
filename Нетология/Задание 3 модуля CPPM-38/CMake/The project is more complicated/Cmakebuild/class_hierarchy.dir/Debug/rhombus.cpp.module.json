@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "class_hierarchy.dir\\Debug\\Rhombus.obj",
+            "outputs": [
+                "C:\\c++\\нетология\\Нетология уроки!\\Нетология\\Задание 3 модуля CPPM-38\\Cmake\\The project is more complicated\\Cmakebuild\\class_hierarchy.dir\\Debug\\vc143.pdb",
+                "class_hierarchy.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}

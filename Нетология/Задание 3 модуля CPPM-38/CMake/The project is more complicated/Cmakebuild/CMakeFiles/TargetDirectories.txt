@@ -1,0 +1,3 @@
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Cmake/The project is more complicated/Cmakebuild/CMakeFiles/class_hierarchy.dir
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Cmake/The project is more complicated/Cmakebuild/CMakeFiles/ALL_BUILD.dir
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Cmake/The project is more complicated/Cmakebuild/CMakeFiles/ZERO_CHECK.dir
