@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -18,25 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in3.txt" />
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\in2.txt" />
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out3.txt" />
-    <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out2.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_lib.h" />
-    <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Математические функции\Header.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_lib.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_Library.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a4f0e6ba-45bf-4d48-bab9-f722d4b0b4b5}</ProjectGuid>
-    <RootNamespace>Нетология</RootNamespace>
+    <ProjectGuid>{a478f3dd-33ae-4e7d-ac8c-0a3b516a2231}</ProjectGuid>
+    <RootNamespace>teststaticanddynamiclib</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -90,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)static_lib_vs;$(SolutionDir)dynamic_lib_vs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,11 +91,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)static_lib_vs;$(SolutionDir)dynamic_lib_vs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -118,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)static_lib_vs;$(SolutionDir)dynamic_lib_vs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,14 +119,24 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)static_lib_vs;$(SolutionDir)dynamic_lib_vs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dynamic_lib_vs\dynamic_lib_vs.vcxproj">
+      <Project>{e9112e57-de56-4287-ac21-32ee98cfdad1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\static_lib_vs\static_lib_vs.vcxproj">
+      <Project>{01701bc4-8d75-4f41-ad98-48cbd8e401bc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

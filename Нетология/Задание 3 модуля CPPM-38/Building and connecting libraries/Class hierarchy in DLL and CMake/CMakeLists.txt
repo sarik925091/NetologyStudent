@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 4.0)
+project(dynamic_lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+include_directories(includes)
+link_directories(lib)
+add_executable(dynamic_lib)
+target_sources(dynamic_lib PRIVATE src/main.cpp)
+target_link_libraries(dynamic_lib class_hierarchy_lib)

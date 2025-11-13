@@ -1,0 +1,10 @@
+^C:\C++\НЕТОЛОГИЯ\НЕТОЛОГИЯ УРОКИ!\НЕТОЛОГИЯ\ЗАДАНИЕ 3 МОДУЛЯ CPPM-38\BUILDING AND CONNECTING LIBRARIES\STATIC LIBRARY\CMAKELISTS.TXT
+setlocal
+C:\Cmake\bin\cmake.exe "-SC:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library" "-BC:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library/build" --check-stamp-file "C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

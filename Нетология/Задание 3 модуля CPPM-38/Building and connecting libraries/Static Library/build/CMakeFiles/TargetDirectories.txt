@@ -1,0 +1,3 @@
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library/build/CMakeFiles/hello_name.dir
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library/build/CMakeFiles/ALL_BUILD.dir
+C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Static Library/build/CMakeFiles/ZERO_CHECK.dir

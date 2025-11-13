@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 4.0)
+project(goodbye_name)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+include_directories(includes)
+link_directories(lib)
+add_executable(goodbye_name)
+target_sources(goodbye_name PRIVATE src/main.cpp)
+target_link_libraries(goodbye_name dynamic_library)
