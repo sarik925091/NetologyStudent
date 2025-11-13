@@ -1,6 +1,7 @@
 #ifndef RIGHT_TRIANGLE_H
 #define RIGHT_TRIANGLE_H
 
+
 #include "Triangle.h"
 
 class RightTriangle : public Triangle {

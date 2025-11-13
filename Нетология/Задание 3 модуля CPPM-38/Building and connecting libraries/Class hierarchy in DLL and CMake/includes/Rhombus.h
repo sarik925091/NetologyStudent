@@ -1,6 +1,7 @@
 #ifndef RHOMBUS_H
 #define RHOMBUS_H
 
+
 #include "Quadrangle.h"
 
 class Rhombus : public Quadrangle {

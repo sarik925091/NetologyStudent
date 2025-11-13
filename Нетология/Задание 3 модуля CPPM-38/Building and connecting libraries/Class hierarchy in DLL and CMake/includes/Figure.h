@@ -3,7 +3,7 @@
 #ifndef __EXPORT
 #define __EXPORT __declspec(dllexport)
 #else
-#define EXPORT_DYNAMIC_USER_LIB __declspec(dllimport)
+#define __EXPORT __declspec(dllimport)
 #endif
 
 class Figure {

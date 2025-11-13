@@ -1,6 +1,7 @@
 #ifndef RECTANGLE1_H
 #define RECTANGLE1_H
 
+
 #include "Quadrangle.h"
 
 class Rectangle1 : public Quadrangle {
