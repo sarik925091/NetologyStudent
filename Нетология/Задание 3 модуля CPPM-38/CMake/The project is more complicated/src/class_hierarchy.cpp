@@ -45,5 +45,6 @@ int main() {
     Rhombus rhombus(30, 30, 40);
     print_info(&rhombus);
 
+    std::cin.get();
     return 0;
 }

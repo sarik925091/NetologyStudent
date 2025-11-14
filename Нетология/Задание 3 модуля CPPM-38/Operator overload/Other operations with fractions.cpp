@@ -5,8 +5,42 @@ class Fraction {
 private:
     int numerator;
     int denominator;
+
+    int gcd(int a, int b) const 
+    {
+        a = std::abs(a);
+        b = std::abs(b);
+        while (b != 0) 
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    void reduce() 
+    {
+        int common = gcd(numerator, denominator);
+        numerator /= common;
+        denominator /= common;
+       
+        if (denominator < 0) 
+        {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+    }
+
 public:
-    Fraction(int num, int denom) : numerator(num), denominator(denom) {}
+    Fraction(int num, int denom) : numerator(num), denominator(denom) 
+    {
+        if (denominator == 0) 
+        {
+            throw std::invalid_argument("Denominator cannot be zero.");
+        }
+        reduce();
+    }
 
     Fraction operator+(const Fraction& other) const 
     {
@@ -39,6 +73,7 @@ public:
     Fraction& operator++() 
     {
         numerator += denominator;
+        reduce();
         return *this;
     }
     
@@ -46,12 +81,14 @@ public:
     {
         Fraction temp = *this;
         numerator += denominator;
+        reduce();
         return temp;
     }
     
     Fraction& operator--() 
     {
-        numerator -= denominator;  
+        numerator -= denominator; 
+        reduce();
         return *this;
     }
 
@@ -59,6 +96,7 @@ public:
     {
         Fraction temp = *this;
         numerator -= denominator;
+        reduce();
         return temp;
     }
 
@@ -80,7 +118,8 @@ public:
         return *this;
     }
 
-    Fraction& operator/=(const Fraction& other) {
+    Fraction& operator/=(const Fraction& other) 
+    {
         *this = *this / other;
         return *this;
     }

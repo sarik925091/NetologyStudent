@@ -25,12 +25,7 @@
     <Text Include="Задание 3 модуля CPPM-38\ООП абстракция и инкапсуляция\out2.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_lib.h" />
     <ClInclude Include="Задание 3 модуля CPPM-38\Многофайловые проекты и библиотеки\Математические функции\Header.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_lib.cpp" />
-    <ClCompile Include="Задание 3 модуля CPPM-38\Building and connecting libraries\Static Library\src\Static_Library.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
