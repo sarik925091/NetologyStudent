@@ -1,3 +1,0 @@
-C:/Users/USER/OneDrive/Рабочий стол/Новая папка/build/CMakeFiles/dynamic_lib.dir
-C:/Users/USER/OneDrive/Рабочий стол/Новая папка/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/USER/OneDrive/Рабочий стол/Новая папка/build/CMakeFiles/ZERO_CHECK.dir

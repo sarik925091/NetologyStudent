@@ -1,8 +1,0 @@
-cmake_minimum_required(VERSION 4.0)
-project(hello_name)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
-include_directories(includes)
-link_directories(lib)
-add_executable(hello_name)
-target_sources(hello_name PRIVATE src/main.cpp)
-target_link_libraries(hello_name Static_library)

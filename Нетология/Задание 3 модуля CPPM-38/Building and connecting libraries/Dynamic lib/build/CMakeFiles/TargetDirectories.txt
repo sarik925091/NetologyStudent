@@ -1,3 +1,0 @@
-C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Dynamic lib/build/CMakeFiles/goodbye_name.dir
-C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Dynamic lib/build/CMakeFiles/ALL_BUILD.dir
-C:/c++/нетология/Нетология уроки!/Нетология/Задание 3 модуля CPPM-38/Building and connecting libraries/Dynamic lib/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(dll_CMake)
+include_directories(includes)
+link_directories(lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+add_executable(dll_CMake)
+target_sources(dll_CMake PRIVATE src/main.cpp)
+target_link_libraries(dll_CMake dynamic_lib)
