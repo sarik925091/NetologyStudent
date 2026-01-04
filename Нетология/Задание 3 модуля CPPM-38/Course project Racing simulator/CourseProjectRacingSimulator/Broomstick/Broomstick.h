@@ -9,7 +9,7 @@ class BROOMSTICK_LIB Broomstick
 {
 private:
 	double speed{ 20.0 };
-	double distanceReduction{};
+	double distanceReduction{0};
 	
 public:
 	double getSpeed();

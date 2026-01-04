@@ -35,35 +35,69 @@
 		} \
     }
 
+struct Variable 
+{
+	int value;
+	std::string name;
+
+	Variable() : value(0), name("") {}
+	Variable(int v, std::string n) : value(v), name(n) {}
+};
+
+bool operator!=(const Variable & var, int num) 
+{
+	return var.value != num;
+}
+
+bool operator==(const Variable & var, int num) 
+{
+	return var.value == num;
+}
+bool operator<(const Variable& a, const Variable& b) 
+{
+	return a.value < b.value;
+}
+
 void printResult(int camel, int allTerrainBoots, int centaur, int swiftCamel, int magicCarpet, int eagle, int broomstick)
 {
-	std::vector<std::pair<int, std::string>> variables;
-
-	if (camel != 0) variables.push_back({ camel, "Верблюд" });
-	if (allTerrainBoots != 0) variables.push_back({ allTerrainBoots, "Ботинки-вездеходы" });
-	if (centaur != 0) variables.push_back({ centaur, "Кентавр" });
-	if (swiftCamel != 0) variables.push_back({ swiftCamel, "Верблюд-быстроход" });
-	if (magicCarpet != 0) variables.push_back({ magicCarpet, "Ковёр-самолё" });
-	if (eagle != 0) variables.push_back({ eagle, "Орёл" });
-	if (broomstick != 0) variables.push_back({ broomstick, "Метла" });
+	Variable variables[7] = 
+	{
+		{camel, "Верблюд. Время: "},
+		{allTerrainBoots, "Ботинки-вездеходы. Время: "},
+		{centaur, "Кентавр. Время: "},
+		{swiftCamel, "Верблюд-быстроход. Время: "},
+		{magicCarpet, "Ковёр-самолёт. Время: "},
+		{eagle, "Орёл. Время: "},
+		{broomstick, "Метла. Время: "}
+	};
 	
+	std::vector<Variable> nonZeroVars;
 
-	// Сортировка по убыванию значений
-	std::sort(variables.begin(), variables.end(),
-		[](const auto& x, const auto& y) {
-			return x.first < y.first;
-		});
-
-	// Вывод с именами переменных
-	for (const auto& [value, name] : variables) {
-		std::cout << name << " = " << value << std::endl;
+	for (size_t i = 0; i < 7; ++i) 
+	{
+		if (variables[i] != 0) 
+		{
+			nonZeroVars.push_back(variables[i]);
+		}
+		else if (variables[i] == 0) 
+		{
+			continue;
+		}
 	}
+
+	std::sort(nonZeroVars.begin(), nonZeroVars.end());
+
+	for (const auto& var : nonZeroVars) 
+	{
+		std::cout << var.name << var.value << std::endl;
+	}
+	std::cout << std::endl;
 }
 
 void calculatingTheTime(int* arr, int distance)
 {
-	int camel, allTerrainBoots, centaur, swiftCamel;
-	int magicCarpet, eagle, broomstick;
+	int camel{}, allTerrainBoots{}, centaur{}, swiftCamel{};
+	int magicCarpet{}, eagle{}, broomstick{};
 	for (size_t i = 0; i < 7; ++i)
 	{
 		switch (arr[i])
@@ -96,15 +130,16 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	while (2)
+	while (true)
 	{
 		int typeRace = typeOfRaceInput();
 		int distance = distanceLength();
 		int registrationOfferB = registrationOfferBegin();
 		int registrationOfferA;
 		int registrationTS{};
+		int offerAnd{};
 		int qtyTS[7]{};
-		while (true)
+		while (1)
 		{
 			registrationTS = registrationTrasnport();
 			
@@ -195,6 +230,7 @@ int main()
 					if (registrationOfferA == 2)
 					{
 						calculatingTheTime(qtyTS, distance);
+						break;
 					}
 					else if (registrationOfferA == 1)
 					{
@@ -202,6 +238,15 @@ int main()
 					}
 				}
 			}
+		}
+		offerAnd = offerAtTheEnd();
+		if (offerAnd == 1)
+		{
+			continue;
+		}
+		else if (offerAnd == 2)
+		{
+			break;
 		}
 	}
 	return 0;

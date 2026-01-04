@@ -75,7 +75,7 @@ int eagleCalculate(int distanceRace)
 int broomstickCalculate(int distanceRace)
 {
 	Broomstick broomstick;
-	double actualDistance = static_cast<double>(distanceRace) * (1.0 - broomstick.getDistanceReductionForEvery1000(static_cast<double>(distanceRace)));
+	double actualDistance = (static_cast<double>(distanceRace)) * (1.0 - broomstick.getDistanceReductionForEvery1000(static_cast<double>(distanceRace)));
 	double timeRace = actualDistance / broomstick.getSpeed();
 	return static_cast<int>(timeRace);
 }
