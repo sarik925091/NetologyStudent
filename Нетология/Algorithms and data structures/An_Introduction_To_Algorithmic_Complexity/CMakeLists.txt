@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 4.0)
+project(Bin_search)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/Debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/Release)
+set(SOURCES BinSearch/BinSearch/source.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
