@@ -5,8 +5,9 @@ class smart_array
 private:
 	int* arr;
 	int size;
+	int count;
 public:
-	smart_array(int size)
+	smart_array(int size): count(0)
 	{
 		arr = new int[size] {};
 		this->size = size;
@@ -24,6 +25,7 @@ public:
 				if (arr[i] == 0)
 				{
 					arr[i] = n;
+					++count;
 					break;
 				}
 				else
