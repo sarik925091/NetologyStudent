@@ -1,0 +1,127 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Catch2-3.11.0",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-Catch2-3.11.0-Debug-2a9e16604037bf8e0f2f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Catch2-3.11.0"
+				},
+				{
+					"build" : "Catch2-3.11.0/src",
+					"jsonFile" : "directory-Catch2-3.11.0.src-Debug-2337a4a43faf7a02065f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "Catch2-3.11.0/src",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "demoVendorCatch2",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "Catch2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Catch2::@cad2a219572985b87b8d",
+					"jsonFile" : "target-Catch2-Debug-26bb82950fe0b12c5d14.json",
+					"name" : "Catch2",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Catch2WithMain::@cad2a219572985b87b8d",
+					"jsonFile" : "target-Catch2WithMain-Debug-0d7e42c82c0b34c97b3f.json",
+					"name" : "Catch2WithMain",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "demoVendorCatch2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-demoVendorCatch2-Debug-f592fa697a2299eb071d.json",
+					"name" : "demoVendorCatch2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/c++/\u043d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f/\u041d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f \u0443\u0440\u043e\u043a\u0438/\u041d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f/Advanced Cpp programming/Testing/out/build/x64-Debug",
+		"source" : "C:/c++/\u043d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f/\u041d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f \u0443\u0440\u043e\u043a\u0438/\u041d\u0435\u0442\u043e\u043b\u043e\u0433\u0438\u044f/Advanced Cpp programming/Testing"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
