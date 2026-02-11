@@ -15,25 +15,14 @@ public:
 	}
 	void add_element(int n)
 	{
-		if (arr[size - 1] != 0)
+		if (count > size)
 		{
 			throw std::exception("Index outside the array, the array is overflowing!");
 		}
 		else
 		{
-			for (size_t i = 0; i < size; ++i)
-			{
-				if (arr[i] == 0)
-				{
-					arr[i] = n;
-					++count;
-					break;
-				}
-				else
-				{
-					continue;
-				}
-			}
+			arr[count] = n;
+			++count;
 		}
 	}
 	int get_element(int i)
