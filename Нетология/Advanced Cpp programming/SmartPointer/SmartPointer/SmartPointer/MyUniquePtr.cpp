@@ -1,5 +1,6 @@
 #include <iostream>
 #include<memory>
+#include<exception>
 
 template<typename T>
 class Unique_ptr
@@ -13,7 +14,19 @@ public:
     Unique_ptr(const Unique_ptr& ptr) = delete;
 
     Unique_ptr& operator=(Unique_ptr& ptr) = delete;
-    T& operator*() { return *ptr_; }
+
+    T& operator*() const 
+    {
+        if (ptr_ == nullptr)
+            throw std::runtime_error("dereferencing null pointer");
+        return *ptr_;
+    }
+
+    T* operator->() const
+    {
+       
+        return ptr_;
+    }
 
     T* release() noexcept
     {
@@ -26,13 +39,19 @@ public:
 
 int main()
 {
-    Unique_ptr<int> ob = std::make_unique<int>(10);
+    try
+    {
+        Unique_ptr<int> ob = std::make_unique<int>(10);
 
-    std::cout << ob.get() << " -- " << *ob << std::endl;
-    auto ptr = ob.release();
-    std::cout << ob.get() << std::endl;
+        std::cout << ob.get() << " -- " << *ob << std::endl;
+        auto ptr = ob.release();
+        std::cout << ob.get() << std::endl;
 
-    delete ptr;
-    
+        delete ptr;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     return 0;
 }
