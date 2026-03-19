@@ -20,5 +20,5 @@ create table if not exists track (
 	id serial primary key,
 	title varchar(200) not null,
 	duration  integer not null,
-	album_id integer not null references artists(id) ON DELETE CASCADE
+	album_id integer not null references album(id) ON DELETE CASCADE
 );
