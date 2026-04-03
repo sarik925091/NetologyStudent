@@ -1,0 +1,3 @@
+C:/c++/нетология/Нетология уроки/Нетология/Working with databases/WorkingWithPostgreFromCxx/build/CMakeFiles/libpqxxTest.dir
+C:/c++/нетология/Нетология уроки/Нетология/Working with databases/WorkingWithPostgreFromCxx/build/CMakeFiles/ALL_BUILD.dir
+C:/c++/нетология/Нетология уроки/Нетология/Working with databases/WorkingWithPostgreFromCxx/build/CMakeFiles/ZERO_CHECK.dir
