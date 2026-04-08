@@ -2,7 +2,16 @@
 #include <pqxx/pqxx>
 #include <memory>
 #include <optional>
-    
+#include <vector>
+
+struct ClientInfo 
+{
+    int id;
+    std::string first_name;
+    std::string last_name;
+    std::string email;
+    std::vector<std::string> phones;
+};
 
 class Database 
 {
@@ -52,32 +61,31 @@ public:
         std::cout << "Клиент удалён.\n";
     }
 
-    void findClients(const std::string& prep_name, const std::string& value) 
+    std::vector<ClientInfo> findClients(const std::string& prep_name, const std::string& value) 
     {
         pqxx::work tx(conn_);
         pqxx::result res = tx.exec_prepared(prep_name, value);
+        std::vector<ClientInfo> clients;
 
-        if (res.empty()) 
-        {
-            std::cout << "Клиенты не найдены.\n";
-            return;
-        }
-
-        std::cout << "Найденные клиенты:\n";
         for (const auto& row : res) 
         {
-            std::cout << "ID: " << row["id"].as<int>()
-                << ", Имя: " << row["first_name"].as<std::string>()
-                << ", Фамилия: " << row["last_name"].as<std::string>()
-                << ", Email: " << row["email"].as<std::string>() << "\n";
+            ClientInfo client;
+            client.id = row["id"].as<int>();
+            client.first_name = row["first_name"].as<std::string>();
+            client.last_name = row["last_name"].as<std::string>();
+            client.email = row["email"].as<std::string>();
 
-            pqxx::result phones = tx.exec_prepared("find_phones_by_client", row["id"].as<int>());
+            pqxx::result phones = tx.exec_prepared("find_phones_by_client", client.id);
             for (const auto& ph : phones) 
             {
-                std::cout << "  Телефон: " << ph["phone"].as<std::string>() << "\n";
+                client.phones.push_back(ph["phone"].as<std::string>());
             }
+
+            clients.push_back(std::move(client));
         }
+
         tx.commit();
+        return clients;
     }
 };
 
@@ -129,7 +137,7 @@ public:
         return "SELECT id, first_name, last_name, email FROM clients WHERE last_name = $1;";
     }
 
-    static std::string findClientByEmail()
+    static std::string findClientByEmail() 
     {
         return "SELECT id, first_name, last_name, email FROM clients WHERE email = $1;";
     }
@@ -168,7 +176,6 @@ void createTables(pqxx::connection& conn)
 
 int main() 
 {
-
     try 
     {
         pqxx::connection conn(
@@ -178,7 +185,6 @@ int main()
             "user=postgres "
             "password=925091"
         );
-
 
         createTables(conn);
 
@@ -199,23 +205,47 @@ int main()
 
         db.addClient("add_client", "Sardor", "Majidov", "mazidovsardor@gmail.com");
 
-
         std::cout << "\n=== Поиск по email ===\n";
-        db.findClients("find_by_email", "mazidovsardor@gmail.com");
+        auto clients_by_email = db.findClients("find_by_email", "mazidovsardor@gmail.com");
+        for (const auto& client : clients_by_email) 
+        {
+            std::cout << "ID: " << client.id << ", Имя: " << client.first_name
+                << ", Фамилия: " << client.last_name << ", Email: " << client.email << "\n";
+            for (const auto& phone : client.phones) 
+            {
+                std::cout << "  Телефон: " << phone << "\n";
+            }
+        }
 
         db.addPhone("add_phone", "999 888 7777", 1);
 
- 
         std::cout << "\n=== Поиск по телефону ===\n";
-        db.findClients("find_by_phone", "999 888 7777");
+        auto clients_by_phone = db.findClients("find_by_phone", "999 888 7777");
+        for (const auto& client : clients_by_phone) 
+        {
+            std::cout << "ID: " << client.id << ", Имя: " << client.first_name
+                << ", Фамилия: " << client.last_name << ", Email: " << client.email << "\n";
+            for (const auto& phone : client.phones) 
+            {
+                std::cout << "  Телефон: " << phone << "\n";
+            }
+        }
 
         db.updateClientInfo("update_email", "sardor.new@example.com", 1);
 
         std::cout << "\n=== После обновления email ===\n";
-        db.findClients("find_by_email", "sardor.new@example.com");
+        auto clients_updated = db.findClients("find_by_email", "sardor.new@example.com");
+        for (const auto& client : clients_updated) 
+        {
+            std::cout << "ID: " << client.id << ", Имя: " << client.first_name
+                << ", Фамилия: " << client.last_name << ", Email: " << client.email << "\n";
+            for (const auto& phone : client.phones) 
+            {
+                std::cout << "  Телефон: " << phone << "\n";
+            }
+        }
 
         // db.deletePhone("delete_phone", 1);
-
         // db.deleteClient("delete_client", 1);
 
     }
